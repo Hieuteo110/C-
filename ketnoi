@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+#include<string.h>
+using namespace std;
+int main()
+{
+	class sinhvien{
+		private :
+			string hoten,lop;
+			int tuoi;
+		public:
+			sinhvien(){
+				cout<<"Nhap ho ten sinh vien: ";
+				getline(cin,hoten);
+				cin.ignore();
+				cout<<"Nhap ten lop: ";
+				getline(cin,lop);
+				cin.ignore();
+				cout<<"Nhap so tuoi: ";
+				cin>>tuoi;
+			}
+			~sinhvien(){}
+			void hienthi()
+			{
+				cout<<"Ten sinh vien: "<<hoten<<endl;
+				cout<<"Lop: "<<lop<<endl;
+				cout<<"Tuoi: "<<tuoi<<endl;
+			}
+			
+	};
+	sinhvien A;
+	A.hienthi();
+	return 0;
+}
