@@ -1,33 +1,23 @@
 #include<bits/stdc++.h>
-#include<string.h>
 using namespace std;
 int main()
 {
-	class sinhvien{
-		private :
-			string hoten,lop;
-			int tuoi;
+	class mydate{
+		private:
+			int ngay,thang,nam;
 		public:
-			sinhvien(){
-				cout<<"Nhap ho ten sinh vien: ";
-				getline(cin,hoten);
-				cin.ignore();
-				cout<<"Nhap ten lop: ";
-				getline(cin,lop);
-				cin.ignore();
-				cout<<"Nhap so tuoi: ";
-				cin>>tuoi;
+			mydate(int days=1,int months=1,int years=2026)
+			{
+				ngay=days;
+				thang=months;
+				nam=years;
 			}
-			~sinhvien(){}
+			~mydate(){}
 			void hienthi()
 			{
-				cout<<"Ten sinh vien: "<<hoten<<endl;
-				cout<<"Lop: "<<lop<<endl;
-				cout<<"Tuoi: "<<tuoi<<endl;
+				printf("Date: %d - %d - %d",ngay,thang,nam);
 			}
-			
+			void 
 	};
-	sinhvien A;
-	A.hienthi();
 	return 0;
 }
