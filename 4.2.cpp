@@ -20,7 +20,9 @@ using namespace std;
 				cout<<"Nhap vao ngay thang nam: ";
 				cin>>ngay>>thang>>nam;
 			}
-			friend bool operator >= (mydate a,mydate b)
+			friend bool operator >= (mydate a,mydate b);
+	};
+	bool operator >= (mydate a,mydate b)
 			{
 				if (a.nam>b.nam) return true;
 				if (a.nam<b.nam) return false;
@@ -31,7 +33,6 @@ using namespace std;
 				if (a.ngay>=b.ngay) return true;
 				return false;
 			}
-	};
 int main()
 {
 	mydate a[100];

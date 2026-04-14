@@ -20,7 +20,9 @@ using namespace std;
 				cout<<"Nhap vao gio phut giay: ";
 				cin>>gio>>phut>>giay;
 			}
-			friend bool operator >= (mytime a,mytime b)
+			friend bool operator >= (mytime a,mytime b);
+	};
+	bool operator >= (mytime a,mytime b)
 			{
 				if (a.gio>b.gio) return true;
 				if (a.gio<b.gio) return false;
@@ -31,7 +33,6 @@ using namespace std;
 				if (a.giay>=b.giay) return true;
 				return false;
 			}
-	};
 int main()
 {
 	mytime a[100];

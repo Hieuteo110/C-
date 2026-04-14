@@ -19,12 +19,13 @@ class frac
 			{
 				cout<<tuso<<"/"<<mauso;
 			}
-			friend bool operator >(frac a,frac b)
+			friend bool operator >(frac a,frac b);
+	};
+	bool operator >(frac a,frac b)
 			{
 				if(a.tuso*b.mauso>b.tuso*a.mauso) return true;
 				return false;
 			}
-	};
 int main()
 {
 	frac a[100];
