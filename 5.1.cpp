@@ -1,5 +1,6 @@
  #include<iostream>
  #include<string.h>
+ #include<iomanip>
  using namespace std;
  class myaddress
  {
@@ -20,8 +21,9 @@
 		}
 		void xuat()
 		{
-			cout<<"\nTen tinh: "<<tinh;
-			cout<<"\nTen huyen: "<<huyen;
+			cout<<left
+			<<setw(15)<<tinh
+			<<setw(15)<<huyen;
 		}
  };
  //===========================================================
@@ -48,8 +50,8 @@
 		void xuat()
 		{
 			myaddress::xuat();
-			cout<<"\nHo va ten: "<<name;
-			cout<<"\nSo dien thoai: "<<phone;
+			cout<<setw(15)<<name
+			<<setw(15)<<phone;
 		}	
  };
  //==========================================================
@@ -65,16 +67,35 @@
 			salary=luong;
 			}	
 		~office(){}
+		static void tieude()
+	{
+		cout<<left
+		<<setw(15)<<"Tinh"
+		<<setw(15)<<"Huyen"
+		<<setw(15)<<"Ho va ten"
+		<<setw(15)<<"So dien thoai"
+		<<setw(15)<<"Luong";
+		cout<<"\n---------------------------------------------------\n";
+	}
+		void xuat()
+		{
+			person::xuat();
+			cout<<setw(15)<<salary;
+		}
+		static void xuatbang(office ds[],int n)
+		{
+			tieude();
+			for(int i=0;i<n;i++)
+			{
+				ds[i].xuat();
+				cout<<endl;
+			}
+		}
 		void nhap()
 		{
 			person::nhap();
 			cout<<"\nLuong: ";cin>>salary;
 
-		}
-		void xuat()
-		{
-			person::xuat();
-			cout<<"\nLuong: "<<salary;
 		}
 		friend bool operator >(office a,office b);
  };
@@ -107,11 +128,7 @@
     }
 
     cout << "\n===== DANH SACH SAU SAP XEP =====\n";
-    for (int i = 0; i < n; i++)
-    {
-        cout << "\n\nDoi tuong thu " << i + 1 << ":";
-        ds[i].xuat();
-    }
+	office::xuatbang(ds,n);
 
     return 0;
 }
